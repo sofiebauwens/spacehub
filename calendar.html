@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Launch Calendar - Space Hub</title>
+    <link rel="stylesheet" href="style%20calendar.css">
+</head>
+<body>
+<header>
+    <a href="Space%20hub.html"><h1 class="space-hub-title">Space Hub</h1></a>
+    <nav>
+        <ul>
+            <li><a href="Space%20hub.html">Interactive Map</a></li>
+            <li><a href="#" class="active">Space Events Calendar</a></li>
+            <li><a href="trivia.html">Trivia</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="calendar-container">
+    <div class="calendar-header">
+        <h1>Space Events Calendar</h1>
+        <p>Track upcoming rocket launches, space events, missions, and activities worldwide</p>
+    </div>
+
+    <div class="controls">
+        <div class="month-selector">
+            <button id="prev-month">Previous</button>
+            <div class="current-month" id="current-month">May 2025</div>
+            <button id="next-month">Next</button>
+        </div>
+        <button id="today-button">Today</button>
+    </div>
+
+    <div class="view-switcher" id="view-switcher">
+        <button class="active" data-view="all">All Listed Events</button>
+        <button data-view="launches">Launches</button>
+        <button data-view="events">Other Space Events</button>
+    </div>
+
+    <div class="event-type-filter" id="launch-filter">
+        <button data-type="all">All Launches</button>
+        <button data-type="CREWED">Crewed</button>
+        <button data-type="COMMUNICATION">Communications</button>
+        <button data-type="EARTH_OBSERVATION">Earth Observation</button>
+        <button data-type="RESUPPLY">Resupply</button>
+        <button data-type="OTHER">Other</button>
+    </div>
+
+    <div class="event-type-filter" id="event-filter">
+        <button data-type="all">All Events</button>
+        <button data-type="DOCKING">Docking</button>
+        <button data-type="UNDOCKING">Undocking</button>
+        <button data-type="LANDING">Landing</button>
+        <button data-type="SPACEWALK">Spacewalk</button>
+        <button data-type="FLYBY">Flyby</button>
+        <button data-type="OTHER">Other</button>
+    </div>
+
+    <div class="calendar" id="calendar">
+        <div class="loading" id="loading">Loading space events...</div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="event-details" id="event-details">
+        <span class="close-button" id="close-button">&times;</span>
+        <h2 id="event-title">Event Title</h2>
+        <p id="event-date" class="event-detail">Date: </p>
+        <p id="event-description" class="event-detail">Description: </p>
+        <p id="event-location" class="event-detail">Location: </p>
+        <p id="event-type" class="event-detail">Type: </p>
+        <div id="additional-details"></div>
+    </div>
+</div>
+<script src="javaCalendar.js"></script>
+</body>
+</html>

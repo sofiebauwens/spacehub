@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Hub - ISS & Satellite Tracker</title>
+  <link rel="stylesheet" href="style%20globe.css">
+  <style>
+    .highlight {
+      background-color: rgba(52, 152, 219, 0.2);
+      transition: background-color 0.5s;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1 class="space-hub-title">Space Hub</h1>
+  <nav>
+    <ul>
+      <li class="dropdown">
+        <a href="#map">Interactive Map</a>
+        <div class="dropdown-content">
+          <a href="#" id="iss-view-link"> > ISS Location</a>
+          <a href="#" id="satellite-view-link"> > Satellites</a>
+          <a href="#" id="moon-landing-link"> > Moon landing</a>
+        </div>
+      </li>
+      <li><a href="calendar.html">Space Events Calendar</a></li>
+      <li><a href="trivia.html">Trivia</a></li>
+    </ul>
+  </nav>
+</header>
+<div id="info-panel">
+  <h2>Astronauts in Space:</h2>
+  <div id="astronauts-list">Loading...</div>
+</div>
+<div id="button-container">
+  <button id="recenter-btn">
+    Recenter on ISS
+  </button>
+</div>
+<div id="globe-container">
+</div>
+
+<div id="external-view" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100vh; z-index: 5;">
+  <iframe id="external-frame" src="" style="width:100%; height:100%; border:none;"></iframe>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://unpkg.com/globe.gl"></script>
+<script src="javaSpaceHub.js"></script>
+</body>
+</html>
