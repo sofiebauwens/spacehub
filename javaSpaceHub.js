@@ -63,10 +63,10 @@ async function fetchAstronauts() {
             console.log(data); // Check what we get
             // Your existing code to display astronauts
             // data.people will contain the astronaut array
-              })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
         const data = await response.json();
         const infoPanel = document.getElementById('info-panel');
         infoPanel.innerHTML = `
