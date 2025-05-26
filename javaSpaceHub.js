@@ -57,7 +57,7 @@ document.getElementById('recenter-btn').addEventListener('click', async () => {
 
 async function fetchAstronauts() {
     try {
-        const response = await fetch("https://api.open-notify.org/astros.json");
+        const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.open-notify.org/astros.json');
         const data = await response.json();
         const infoPanel = document.getElementById('info-panel');
         infoPanel.innerHTML = `
