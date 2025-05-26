@@ -57,32 +57,31 @@ document.getElementById('recenter-btn').addEventListener('click', async () => {
 
 async function fetchAstronauts() {
     try {
-        const response = await fetch('https://api.codetabs.com/v1/proxy?quest=https://api.open-notify.org/astros.json')
-          .then(response => response.json())
-          .then(data => {
-            console.log(data); // Check what we get
-            // Your existing code to display astronauts
-            // data.people will contain the astronaut array
-          })
-          .catch(error => {
-            console.error('Error:', error);
-          });
+        const response = await fetch('https://api.codetabs.com/v1/proxy?quest=https://api.open-notify.org/astros.json');
         const data = await response.json();
+        
+        console.log(data); // This will show your astronaut data
+        
         const infoPanel = document.getElementById('info-panel');
         infoPanel.innerHTML = `
-        <h2>Astronauts in Space:</h2>
-        <div id="astronauts-list">Loading...</div>
-      `;
+            <h2>Astronauts in Space:</h2>
+            <div id="astronauts-list">Loading...</div>
+        `;
+        
         const updatedAstronautsList = document.getElementById("astronauts-list");
         updatedAstronautsList.innerHTML = "";
+        
         for (const astronaut of data.people) {
             const astronautDiv = document.createElement("div");
             astronautDiv.className = "astronaut";
+            
             const img = document.createElement("img");
             img.alt = astronaut.name;
             img.src = await fetchAstronautImage(astronaut.name);
+            
             const info = document.createElement("div");
             info.innerHTML = `<strong class="astronaut-name">${astronaut.name}</strong><br>${astronaut.craft}`;
+            
             astronautDiv.appendChild(img);
             astronautDiv.appendChild(info);
             updatedAstronautsList.appendChild(astronautDiv);
